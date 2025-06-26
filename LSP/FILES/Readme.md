@@ -7,7 +7,7 @@ c
 #include<fcntl.h>
 #include<string.h>
 1.Write a C program to create a new text file and write user input to it
-/*int main(void)
+int main(void)
 {
   int fd,ref,len;
   char buf[100];
@@ -33,7 +33,7 @@ c
 }
 
 // 2.Develop a C program to open an existing text file and display its contents
-/*int main(){}
+int main(){}
   int fd,ref,len;
   char buf[100];
   fd=open("file.txt",O_RDWR,0666);
