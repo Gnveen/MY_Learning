@@ -1,8 +1,9 @@
+~~
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
 #include<string.h>
-//1.Write a C program to create a new text file and write user input to it
+1.Write a C program to create a new text file and write user input to it
 /*int main(void)
 {
   int fd,ref,len;
@@ -26,7 +27,7 @@
   }
   close(fd);                      //  close fd other than next runtime open system call fails
   return 0;
-}*/
+}
 
 // 2.Develop a C program to open an existing text file and display its contents
 /*int main(){}
@@ -48,7 +49,7 @@
  }
 close(fd);
 return 0;
-  }*/
+  }
 //3.Implement a C program to create a new directory named "Test" in the current-dir? 
 /*#include <stdio.h>
 #include <direct.h>  // For Windows
@@ -424,3 +425,4 @@ int main() {
     write(STDOUT_FILENO, "\n", 1);
     return 0;
 }*/
+~~
