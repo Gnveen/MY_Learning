@@ -1,4 +1,6 @@
-~~
+#FILES
+##
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -424,5 +426,6 @@ int main() {
     write(STDOUT_FILENO, path, len);
     write(STDOUT_FILENO, "\n", 1);
     return 0;
-}*/
-~~
+}
+
+``
