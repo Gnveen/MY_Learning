@@ -31,7 +31,7 @@ int main(void)
   return 0;
 }
 
-// 2.Develop a C program to open an existing text file and display its contents
+2.Develop a C program to open an existing text file and display its contents
 int main(){}
   int fd,ref,len;
   char buf[100];
@@ -52,8 +52,9 @@ int main(){}
 close(fd);
 return 0;
   }
-//3.Implement a C program to create a new directory named "Test" in the current-dir? 
-/*#include <stdio.h>
+
+3.Implement a C program to create a new directory named "Test" in the current-dir? 
+#include <stdio.h>
 #include <direct.h>  // For Windows
 #include <errno.h>
 int main() {
@@ -65,9 +66,10 @@ int main() {
         perror("Error creating directory");
     }
     return 0;
-}*/
-//4.Write a C program to check if a file named "sample.txt" exists in the current directory?
-/*int main(){
+}
+
+4.Write a C program to check if a file named "sample.txt" exists in the current directory?
+int main(){
   if(access("Tes",F_OK)==0){
     printf("File is present\n");
   }
@@ -75,9 +77,10 @@ int main() {
     perror("No such file found");
   }
   return 0;
-}*/
-//5. Develop a C program to rename a file,dir, from "oldname.txt" to "newname.txt"? 
-/*int main(){
+}
+
+5. Develop a C program to rename a file,dir, from "oldname.txt" to "newname.txt"? 
+int main(){
   if(rename("Test","new")==0){
     printf("File renamed");
   }
@@ -85,9 +88,10 @@ int main() {
     perror("Error file");
   }
   return 0;
-}*/
-//6. Implement a C program to delete a file named "delete_me.txt"?
-/*int main(){
+}
+
+6. Implement a C program to delete a file named "delete_me.txt"?
+int main(){
   if(remove("q2.c")==0){
     printf("file removed");
   }
@@ -95,9 +99,10 @@ int main() {
     printf("fai to remove");
   }
   return 0;
-}*/
-//7. Write a C program to copy the contents of one file to another? 
-/*int main() {
+}
+
+7. Write a C program to copy the contents of one file to another? 
+int main() {
     int src_fd, des_fd, rd_ref, wt_ref;
     char buf[100];
     src_fd = open("file.txt", O_RDONLY);
@@ -133,9 +138,10 @@ int main() {
     close(src_fd);
     close(des_fd);
     return 0;
-}*/
-//8. Develop a C program to move a file from one directory to another?
-/*int main(){
+}
+
+8. Develop a C program to move a file from one directory to another?
+int main(){
   char *old_path="src_file.txt";
   char *new_path="../destination/des.txt";
   if(rename(old_path,new_path)==0){
@@ -145,9 +151,10 @@ int main() {
     perror("moving failed");
   }
     return 0;
-}*/
-// 9. Implement a C program to list all files in the current directory
-/*#include <dirent.h>
+}
+
+9. Implement a C program to list all files in the current directory
+#include <dirent.h>
 int main() {
     struct dirent *dir_entry;
     DIR *dir_stream = opendir(".");
@@ -161,9 +168,10 @@ int main() {
     }
     closedir(dir_stream);
     return 0;
-}*/
-//10. Write a C program to get the size of a file named "file.txt"?     
-/*#include <stdlib.h>
+}
+
+10. Write a C program to get the size of a file named "file.txt"?     
+#include <stdlib.h>
 #include <sys/stat.h> //The stat() function in C is used to retrieve information about a file or directory details like file size, permissions, timestamps, and type
 int main() {
     struct stat file_stat;
@@ -173,9 +181,10 @@ int main() {
     }
     printf("Size of file = %ld bytes\n", file_stat.st_size);
     return 0;
-}*/
-//11.prg to check if a directory named exist in the current directory
-/*#include <sys/stat.h>
+}
+
+11.prg to check if a directory named exist in the current directory
+#include <sys/stat.h>
 #include <sys/types.h>
 int main(){
   struct stat st;
@@ -186,9 +195,10 @@ int main(){
     printf("Directory not existed\n");
   }
   return 0;
-}*/
-//12.creat a new dir named "Backup"
-/*#include <direct.h>
+}
+
+12.creat a new dir named "Backup"
+#include <direct.h>
 int main() {
     int status = _mkdir("Backup"); // for creating in pwd, if like to creat in previous dir use ../file_name
   
@@ -199,8 +209,9 @@ int main() {
     }
 
     return 0;
-}*/
-/*13. Write a C program to recursively list all files and directories in a given directory? 
+}
+
+13. Write a C program to recursively list all files and directories in a given directory? 
 #include <dirent.h>
 #include <sys/stat.h>
 void listfl(const char *basepath) {
@@ -228,10 +239,10 @@ int main() {
     printf("Listing files in: %s\n", path);
     listfl(path);
     return 0;
-}*/
+}
 
-//14. Develop a C program to delete all files in a directory named "Temp"?
-/*#include <sys/types.h>
+14. Develop a C program to delete all files in a directory named "Temp"?
+#include <sys/types.h>
 #include <sys/stat.h>
 #include <dirent.h>
 int main() {
@@ -257,9 +268,10 @@ int main() {
     }
     closedir(dir);
     return 0;
-}*/
-//15. prg to count the number of lines in a file
-/*int main(){
+}
+
+15. prg to count the number of lines in a file
+int main(){
   FILE *fp;
   char ch;
   int ln_count=0;
@@ -276,9 +288,10 @@ int main() {
   fclose(fp);
   printf("Total num:%d\n", ln_count+1);
   return 0;
-}*/
-//16. c prg to append "Goodbye" to the end of an existing file,
-/*int main(){
+}
+
+16. c prg to append "Goodbye" to the end of an existing file,
+int main(){
   FILE *fd;
   fd=fopen("file.txt","a");
   if(fd==NULL){
@@ -289,9 +302,10 @@ int main() {
   fclose(fd);
   printf("Text appended\n");
   return 0;
-}*/
-//17. c program to change the permission of a file,
-/*int main(){
+}
+
+17. c program to change the permission of a file,
+int main(){
   const char *fnam="file.txt";
   if(chmod(fnam,0444)==0)
   printf("permission changed to read only\n");
@@ -300,11 +314,12 @@ int main() {
     return 1;
   }
   return 1;
-}*/
-//18. c prg to change the ownership of a file to user
+}
 
-//19. Develop a C program to get the last modified timestamp of a file named "file.txt"?
-/*#include<sys/stat.h>
+18. c prg to change the ownership of a file to user
+
+19. Develop a C program to get the last modified timestamp of a file named "file.txt"?
+#include<sys/stat.h>
 #include<time.h>
 int main(){
   const char *filename="file.txt";
@@ -315,9 +330,10 @@ int main(){
   }
   printf("last modified time of %s:%s",filename,ctime(&file_stat.st_mtime));
   return 0;
-}*/
-//20. creat a temporary file and write some data to it?
-/*int main(){
+}
+
+20. creat a temporary file and write some data to it?
+int main(){
   FILE *temp_file=tmpfile();
   if(temp_file==NULL){
     perror("Failed to create temp file");
@@ -333,9 +349,10 @@ int main(){
   sleep(100);
 fclose(temp_file);
 return 0;
-}*/
-//21. Write a C program to check if a given path refers to a file or a directory? 
-/*#include <sys/stat.h>
+}
+
+21. Write a C program to check if a given path refers to a file or a directory? 
+#include <sys/stat.h>
 int main() {
     const char *path = "file.txt"; // Change this path as needed
     struct stat st;
@@ -358,9 +375,10 @@ int main() {
     }
     close(fd);
     return 0;
-}*/
-// * 22. Develop a C program to create a hard link named "hardlink.txt" to a file named "source.txt"? 
-/*#include <windows.h>
+}
+
+22. Develop a C program to create a hard link named "hardlink.txt" to a file named "source.txt"? 
+#include <windows.h>
 int main() {
     const char *source = "file.txt";
     const char *hardlink = "des_file.txt";
@@ -371,11 +389,11 @@ int main() {
         return 1;
     }
     return 0;
-}*/
-//23. Implement a C program to read and display the contents of a CSV file named "data.csv"?                                   
-/*#define FILE_NAME "data.csv"
-#define BUFFER_SIZE 1024
+}
 
+23. Implement a C program to read and display the contents of a CSV file named "data.csv"?                                   
+#define FILE_NAME "data.csv"
+#define BUFFER_SIZE 1024
 int main() {
     int fd;
     ssize_t bytes_read;
@@ -407,9 +425,10 @@ int main() {
     }
     close(fd);
     return 0;
-}*/
-//24. Write a C program to get the absolute path of the current working directory?
-/*#include <limits.h>
+}
+
+24. Write a C program to get the absolute path of the current working directory?
+#include <limits.h>
 #include <fcntl.h>
 int main() {
     char path[PATH_MAX];
