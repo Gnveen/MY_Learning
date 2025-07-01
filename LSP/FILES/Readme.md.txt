@@ -1,7 +1,7 @@
 # Files
 
 1.Write a C program to create a new text file and write user input to it
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -32,7 +32,7 @@ int main(void)
 }
 ```
 2.Develop a C program to open an existing text file and display its contents
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -59,7 +59,7 @@ return 0;
   }
 ```
 3.Implement a C program to create a new directory named "Test" in the current-dir? 
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -79,7 +79,7 @@ int main() {
 }
 ```
 4.Write a C program to check if a file named "sample.txt" exists in the current directory?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -94,7 +94,7 @@ int main(){
 }
 ```
 5. Develop a C program to rename a file,dir, from "oldname.txt" to "newname.txt"? 
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -109,7 +109,7 @@ int main(){
 }
 ```
 6. Implement a C program to delete a file named "delete_me.txt"?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -125,7 +125,7 @@ int main(){
 }
 ```
 7. Write a C program to copy the contents of one file to another? 
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -169,7 +169,7 @@ int main() {
 }
 ```
 8. Develop a C program to move a file from one directory to another?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -187,7 +187,7 @@ int main(){
 }
 ```
 9. Implement a C program to list all files in the current directory
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -209,7 +209,7 @@ int main() {
 }
 ```
 10. Write a C program to get the size of a file named "file.txt"?     
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -227,7 +227,7 @@ int main() {
 }
 ```
 11.program to check if a directory named exist in the current directory
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -246,7 +246,7 @@ int main(){
 }
 ```
 12.creat a new dir named "Backup"
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -265,7 +265,7 @@ int main() {
 }
 ```
 13. Write a C program to recursively list all files and directories in a given directory? 
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -300,7 +300,7 @@ int main() {
 }
 ```
 14. Develop a C program to delete all files in a directory named "Temp"?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -334,7 +334,7 @@ int main() {
 }
 ```
 15. prg to count the number of lines in a file
-```
+```c
 int main(){
   FILE *fp;
   char ch;
@@ -354,8 +354,8 @@ int main(){
   return 0;
 }
 ```
-16. c prg to append "Goodbye" to the end of an existing file,
-```
+16. C prg to append "Goodbye" to the end of an existing file,
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -373,8 +373,8 @@ int main(){
   return 0;
 }
 ```
-17. c program to change the permission of a file,
-```
+17. C program to change the permission of a file,
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -391,7 +391,7 @@ int main(){
 }
 ```
 18 Write a C program to change the ownership of a file named "file.txt"  to the user "user1"?   
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -423,7 +423,7 @@ int main(void)
 }
 ```
 19. Develop a C program to get the last modified timestamp of a file named "file.txt"?
-```
+```c
 #include<sys/stat.h>
 #include<time.h>
 int main(){
@@ -438,7 +438,7 @@ int main(){
 }
 ```
 20. creat a temporary file and write some data to it?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -462,7 +462,7 @@ return 0;
 }
 ```
 21. Write a C program to check if a given path refers to a file or a directory? 
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -493,7 +493,7 @@ int main() {
 }
 ```
 22. Develop a C program to create a hard link named "hardlink.txt" to a file named "source.txt"? 
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -512,7 +512,7 @@ int main() {
 }
 ```
 23. Implement a C program to read and display the contents of a CSV file named "data.csv"?                                   
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -554,7 +554,7 @@ int main() {
 }
 ```
 24. Write a C program to get the absolute path of the current working directory?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -579,7 +579,7 @@ int main() {
 }
 ```
 25. Develop a C program to get the size of a directory named "Documents"? 
-```
+```c
 #include<fcntl.h>
 #include<unistd.h>
 #include<dirent.h>
@@ -636,7 +636,7 @@ long get_directory_size(const char *path)
 }
 ```
 26. Implement a C program to recursively copy all files and directories from one directory to another?
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -717,7 +717,7 @@ void copy_directory(const char *src_dir, const char *dst_dir)
 }
 ```
 27. write a c program to get the number of files in a directory 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
@@ -757,7 +757,7 @@ int main() {
 }
 ```
 28. Develop a C program to create a FIFO (named pipe) named "myfifo" in the current directory? 
-```
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/types.h>
@@ -783,7 +783,7 @@ int main(void){
 }
 ```
 29.Implement a C program to read data from a FIFO named "myfifo"? 
-``` 
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<fcntl.h>
@@ -812,7 +812,7 @@ int main(){
 
 ```
 30. Write a C program to truncate a file named "file.txt" to a specified length?  
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>
@@ -832,7 +832,7 @@ return 0;
 }
 ```
 31. Develop a C program to search for a specific string in a file  named "data.txt" and display the line number(s) where it occurs?  
-```
+```c
 #include<stdio.h>
 #include<string.h>
 int main(){
@@ -866,7 +866,7 @@ int main(){
 }
 ```
 32. Implement a C program to get the file type (regular file, directory, symbolic link, etc.) of a given path?
-```
+```c
 #include<stdio.h>
 #include<sys/stat.h>
 #include<unistd.h>
@@ -898,7 +898,7 @@ int main(){
 }
 ```
 34. Develop a C program to get the permissions (mode) of a file named "file.txt"? 
-```
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/stat.h>
@@ -930,7 +930,7 @@ int main(){
 }
 ```
 35. Implement a C program to recursively delete a directory named "Temp" and all its contents?
-
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1001,7 +1001,7 @@ int main(void) {
 }
 ```
 36. Write a C program to read and display the first 10 lines of a file named "log.txt"? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 int main(void) {
@@ -1031,7 +1031,7 @@ int main(void) {
 }
 ```
 37. Develop a C program to read data from a text file named "input.txt" and write it to another file named "output.txt" in reverse order? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 int main(void) {
@@ -1095,7 +1095,7 @@ int main(void) {
 }
 ```
 38. Implement a C program to create a new directory named with the current date in the format "YYYY-MM-DD"? 
-```
+```c
 #include<stdio.h>
 #include<time.h>
 #include<sys/stat.h>
@@ -1119,7 +1119,7 @@ int main(){
 }
 ```
 39. Write a C program to read and display the contents of a binary file named "binary.bin"?
-```
+```c
 #include<stdio.h>
 #include<stdlib.h>
 int main(){
@@ -1146,7 +1146,7 @@ int main(){
 }
 ```
 40. Develop a C program to get the size of the largest file in a directory?
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1218,7 +1218,7 @@ int main(void) {
 }
 ```
 41. Implement a C program to check if a file named "data.txt" is readable?
-```
+```c
 #include <stdio.h>
 #include <unistd.h>
 
@@ -1237,7 +1237,7 @@ int main(void)
 }
 ```
 42. Write a C program to create a new directory named "Logs" and move all files with the ".log" extension into it? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1294,7 +1294,7 @@ int main(void) {
 }
 ```
 44. Implement a C program to read the contents of a text file named "instructions.txt" and execute the instructions as shell commands? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1356,7 +1356,7 @@ int main(void) {
 }
 ```
 45. Write a C program to get the number of hard links to a file named "file.txt"?
-```
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/stat.h>
@@ -1372,7 +1372,7 @@ int main(){
 }
 ```
 46. Develop a C program to copy the contents of all text files in a directory into a single file named "combined.txt"? 
-```
+```c
 #include <stdio.h>
 #include <dirent.h>
 #include <string.h>
@@ -1422,7 +1422,7 @@ int main(void)
 }
 ```
 47. Implement a C program to recursively calculate the total size of all files in a directory and its subdirectories? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1476,7 +1476,7 @@ long long get_directory_size(const char *path)
 }
 ```
 48. Write a C program to get the number of bytes in a file named "data.bin"?
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -1503,7 +1503,7 @@ int main(void)
 }
 ```
 49. Develop a C program to create a new directory named with the current timestamp in the format "YYYY-MM-DD-HH-MM-SS"?
-```
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -1527,7 +1527,7 @@ int main(){
 } 
 ```
 50. Implement a C program to open a file named "data.txt" in read mode and display its contents? 
-```
+```c
 #include<stdio.h>
 int main(){
 	FILE *fp;
@@ -1545,7 +1545,7 @@ int main(){
 }
 ```
 51. Write a C program to create a symbolic link(soft like) named "link.txt" to a file named "target.txt"? 
-```
+```c
 #include <stdio.h>
 #include <unistd.h>
 
@@ -1565,7 +1565,7 @@ int main(void)
 }
 ```
 52. Implement a C program to read and display the contents of a binary file named "binary.bin"? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -1594,7 +1594,7 @@ int main(void)
 }
 ```
 53. Develop a C program to read data from a binary file named "data.bin" and display it in hexadecimal format? 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
