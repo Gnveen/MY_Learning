@@ -1,24 +1,24 @@
 ```
-# Process:
+### Process:
 	A process is an independent program in execution, with its own address space, code, data, and system resources. 
 It's managed by the operating system, which assigns it a Process ID (PID) and isolates it from other processes to ensure 
 memory safety and stability
 
-# Thread:
+### Thread:
 	A thread is the smallest unit of execution within a process. Threads share the same memory space but run independently, 
 enabling concurrent execution, Shares memory with other threads in the same process but has its own stack memory and registers
 
-# Multi-threading:
+### Multi-threading:
 	Multipull threads run under a single process is called as multi-threading. They share memory of Code Segment, Heap Memory, 
 Global/Static Varibles and File Descripter and have seprate Stack Merory & Registers, execute independently and  This enables 
 efficient communication and resource sharing compared to multiprocessing
 
-# Supporting Languages
-C/C++: Provides low-level threading capabilities through libraries POSIX threads(pthreads)
+### Supporting Languages
+- **C/C++: Provides low-level threading capabilities through libraries POSIX threads(pthreads)
 
-Python: Offers by the threading module, It provides a higher‑level, object‑oriented interface over the lower‑level _thread module
+- **Python: Offers by the threading module, It provides a higher‑level, object‑oriented interface over the lower‑level _thread module
 
-Java: Java treats every concurrent task as a Thread (or indirectly via Runnable/Callable),
+- **Java: Java treats every concurrent task as a Thread (or indirectly via Runnable/Callable),
 
 # Use of Multithreading
 Parallel Processing
