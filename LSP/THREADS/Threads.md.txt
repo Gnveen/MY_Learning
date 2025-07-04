@@ -1,52 +1,121 @@
-```
+# Introduction
 ### Process:
-	A process is an independent program in execution, with its own address space, code, data, and system resources. 
-It's managed by the operating system, which assigns it a Process ID (PID) and isolates it from other processes to ensure 
-memory safety and stability
+A process is an independent program in execution, with its own address space, code, data, and system resources. 
+It's managed by the operating system throw PCB, and assigns a Process ID (PID) and isolates it from other processes to ensure memory safety and stability
 
 ### Thread:
-	A thread is the smallest unit of execution within a process. Threads share the same memory space but run independently, 
-enabling concurrent execution, Shares memory with other threads in the same process but has its own stack memory and registers
+A thread is the smallest unit of execution within a process. Threads share the same memory of Code Segment, Heap Memory, Global/Static Varibles and FD table space but run independently, its has own stack memory and registers.
 
 ### Multi-threading:
-	Multipull threads run under a single process is called as multi-threading. They share memory of Code Segment, Heap Memory, 
-Global/Static Varibles and File Descripter and have seprate Stack Merory & Registers, execute independently and  This enables 
-efficient communication and resource sharing compared to multiprocessing
-
+Multipull threads run under a single process is called as multi-threading. They share memory of Code Segment, Heap Memory, Global/Static Varibles and File Descripter and have seprate Stack Merory & Registers, execute independently and  This enables efficient communication and resource sharing compared to multiprocessing
+```
+Q 1) What is the Differance between Thread and a process?
+Q 2) How do threads share memory? 
+Q 3) What are the difference between child process and thread? 
+```
 ### Supporting Languages
-- **C/C++: Provides low-level threading capabilities through libraries POSIX threads(pthreads)
+1) C/C++: Provides low-level threading capabilities through libraries POSIX threads(pthreads)
 
-- **Python: Offers by the threading module, It provides a higher‑level, object‑oriented interface over the lower‑level _thread module
+2) Python: Offers by the threading module, It provides a higher‑level, object‑oriented interface over the lower‑level _thread module
 
-- **Java: Java treats every concurrent task as a Thread (or indirectly via Runnable/Callable),
+3) Java: Java treats every concurrent task as a Thread (or indirectly via Runnable/Callable),
+```
+Q 4) How Python threads Differ from C threads?
+A)# 🧵 Python Threads vs C Threads
+## 🐍 Python Threads
+- Uses the built-in threading module.
+- Limited true parallelism due to the Global Interpreter Lock (GIL).
+- More suitable for I/O-bound tasks.
+## C Threads (POSIX Threads)
+- Uses pthread library for low-level thread creation.
+- Supports true parallelism across CPU cores.
+- Ideal for CPU-bound tasks and systems programming.
 
+Q 5) How C++ threads Differ from C threads?
+A) ***C Threads***
+- C uses POSIX threads (pthreads), which are low-level APIs providing direct control over thread behavior.
+- Requires manual management of thread creation, joining, and synchronization.
+- Provides flexibility but is more verbose and error-prone
+
+***C++ Threads***
+- Introduced with C++11 via the <thread> header, offering a high-level and object-oriented abstraction.
+- Simplifies thread management using RAII principles (Resource Acquisition Is Initialization). 
+- Integrates well with C++ standard library features like std::mutex, std::future, and std::async.
+```
 # Use of Multithreading
-Parallel Processing
-Faster Execution on Multi-core Systems
-Efficient Resource Utilization
-Speed up I/O-bound programs (e.g., file reading, network requests)
-Improve responsiveness
+- Parallel Processing
+- Faster Execution on Multi-core Systems
+- Efficient Resource Utilization
+- Speed up I/O-bound programs (e.g., file reading, network requests)
+- Improve responsiveness
 
+```
+Q 5) How Multithreading help in fast Execution?
+```
 # Applications
-Web servers (e.g., handling multiple client requests simultaneously)
+- Web servers (e.g., handling multiple client requests simultaneously)
 
-Video games (e.g., separate threads for rendering, physics, and input)
+- Video games (e.g., separate threads for rendering, physics, and input)
 
-Download managers (e.g., splitting files into parts to download in parallel)
+- Download managers (e.g., splitting files into parts to download in parallel)
 
-Banking systems (e.g., processing concurrent transactions safely)
+- Banking systems (e.g., processing concurrent transactions safely)
 
-Machine learning/data processing (e.g., processing data batches in parallel)
+- Machine learning/data processing (e.g., processing data batches in parallel)
+
+```
+Q 6) How Threads use in Web pages?
+
+```
 
 # Creation of thread
-To create a thread 1st insilize a thread variable,
-To create thread use pthread_create() function
-	syntax: pthread_create(& thread variable name, NULL, function, function orguments); 
+1 ) Create function:
+- To create a thread 1st insilize a thread variable,
+- For creation of thread use pthread_create() function,
+```c
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg);
+```
+🧩 Arguments Explained:-\
+```
+| Argument          | Description | 
+-----------------------------------
+| pthread_t *thread | Pointer to a pthread_t variable where the ID of the new thread will be stored. | 
+| const pthread_attr_t *attr | Specifies thread attributes like stack size, scheduling, etc. Use NULL for default attributes. | 
+| void *(*start_routine)(void *) | Pointer to the function the thread should execute. The function should take a void* argument and return a void*. | 
+| void *arg | Argument passed to the start_routine function. Can be a pointer to any data structure or NULL. | 
+```
+✅ Return Value
+- Returns 0 on success.
+- On failure, returns an error number (non-zero) indicating what went wrong.
 
+2 ) Thread function:
 Function syntax:
 	void* fun_name(void* args)
- -> By using void pointer it can accept any type of pointer as argument and return void pointer, 
+Explation:-\
+```
+| Part                 | Meaning |
+------------------------------------
+| void * (return type) | The return value is a void* pointer, which can be used to return data back to the thread that joined (using pthread_join). If you have nothing to return, just return NULL;. | 
+| thread_function | The name of your thread function. You can name it anything. | 
+| (void *arg) | The argument passed in from pthread_create. This is a void* so it can point to anything—int, struct, array, etc. You just cast it inside the function. | 
+```
+3 ) pthread_join():
+It’s used by one thread (usually main) to wait for another thread to finish execution. This ensures the program doesn’t terminate before all threads are done.
+```c
+int pthread_join(pthread_t thread, void **retval);
+```
+Explained:-
+```
+| Argument | Description | 
+---------------------------
+| pthread_t thread | The ID of the thread you want to wait for. This should be the same pthread_t that was filled by pthread_create(). | 
+| void **retval | A pointer to a pointer where the return value from the thread function (i.e., what it returns with return) will be stored. Use NULL if you don’t care about the return value. | 
+```
+ Return Value
+- Returns 0 on success.
+- Non-zero error code on failure (e.g., ESRCH, EINVAL, EDEADLK).
 
+```c
 Exaple code:
 #include <stdio.h>
 #include <pthread.h>
@@ -67,61 +136,35 @@ int main() {
     printf("Final Counter Value: %d\n", counter);
     return 0;
 }
-
+```
 # Exeguation 
-	when a thread function call then a thread will create and exeguate indipendend and create memory at stack area.
- In threads if main thread's exeguation complate the remaining threads in the code will terminate even if exeguation 
-pending of threads, because if main thread exeguation complete it says that the whole application exeguation is completed 
-due to this the stact area will clean, thare fore threads stack area also force to clean,
-To wait the main thread until the remaing threads completion, we have pthread_join() pthread_join() will make the main thread to 
-wait until the menction thread competion,
- syntax: pthread_join(pthread_t thread, void **return)
- Pthread_join() contains 2 arguments 
-- pthread_t thread: The identifier of the thread to wait for.
-- void **retval: A pointer to a location where the exit status of the thread will be stored (can be NULL if not needed)
+When a thread function call throw pthread_create() then a thread will create and exeguate indipendently at memory stack area, when Exeguation of thread complete the thread return the value to main thread,
+In threads if main thread's exeguation complate the remaining threads in the code will terminate even if exeguation pending of threads, because if main thread exeguation complete it says that the whole application exeguation is completed due to this the stact area will clean, thare fore threads stack area also force to clean,To wait the main thread until the remaing threads completion, we have pthread_join() pthread_join() will make the main thread to wait until the menction thread competion,
 
+# Considerations Issues
+1. ***Global data corruption:*** When two or more threads access and modify global data at the same time, and the access is not controlled properly (no lock, mutex, etc.), the data can get corrupted
 
-#  Considerations Issues
-1. Global data corruption: When two or more threads access and modify global data at the same time, and the access is not 
-controlled properly (no lock, mutex, etc.), the data can get corrupted
+2. ***Race conditions:*** A race condition occurs when two or more threads (or processes) access shared data at the same time, and the final result depends on the timing or order of execution.
+Because the threads are "racing" to read or write the same data, the outcome becomes unpredictable and may lead to bugs, crashes, or corrupted data
 
-2. Race conditions: A race condition occurs when two or more threads (or processes) access shared data at the same time,
-and the final result depends on the timing or order of execution.
-Because the threads are "racing" to read or write the same data, the outcome becomes unpredictable and may lead to bugs,
-crashes, or corrupted data
+3. ***Deadlocks:*** A deadlock occurs when two or more threads (or processes) are waiting for each other to release resources, and none of them can proceed.
 
-3. Deadlocks: A deadlock occurs when two or more threads (or processes) are waiting for each other to release resources, 
-and none of them can proceed.
-
-4. LiveLock: A livelock is a situation in concurrent programming where two or more threads keep changing their state in 
-response to each other, but fail to make any actual progress. Unlike a deadlock, where threads are stuck waiting, in a 
-livelock, threads are actively running, but constantly yielding or retrying, which prevents them from completing their tasks.
+4. ***LiveLock:*** A livelock is a situation in concurrent programming where two or more threads keep changing their state in response to each other, but fail to make any actual progress. Unlike a deadlock, where threads are stuck waiting, in a livelock, threads are actively running, but constantly yielding or retrying, which prevents them from completing their tasks.
 
 # Synchronization and locking mechanism
-1. Mutexes: A mutex, short for mutual exclusion, is a synchronization primitive used to protect shared resources in a 
-multithreaded environment. It ensures that only one thread at a time can access a critical section of code.
-When a thread locks a mutex, any other thread that tries to lock it will be blocked until the mutex is released. 
+1. ***Mutexes:*** A mutex, short for mutual exclusion, is a synchronization primitive used to protect shared resources in a multithreaded environment. It ensures that only one thread at a time can access a critical section of code. When a thread locks a mutex, any other thread that tries to lock it will be blocked until the mutex is released. 
 This prevents race conditions and data corruption when multiple threads interact with shared data
 
-2. Semaphores: A semaphore is a synchronization tool used to control access  to a shared resource by multiple threads.
-It works using a counter that represents the number of available resources or permits. 
+2. ***Semaphores:*** A semaphore is a synchronization tool used to control access  to a shared resource by multiple threads. It works using a counter that represents the number of available resources or permits. 
 
-3. Condition Variable:  A Condition Variable is a synchronization primitive that allows threads to wait for certain
-conditions to become true, while releasing the associated lock during the wait.
-It’s commonly used when a thread needs to pause until a specific condition is met, such as waiting for a shared resource 
-to become available or for a queue to be non-empty.
+3. ***Condition Variable:***  A Condition Variable is a synchronization primitive that allows threads to wait for certain conditions to become true, while releasing the associated lock during the wait.
+It’s commonly used when a thread needs to pause until a specific condition is met, such as waiting for a shared resource to become available or for a queue to be non-empty.
 
-4. Spinlocks: A spinlock is a type of lock used in multithreading to protect shared resources. Unlike regular locks where 
-a thread might go to sleep if it can't acquire the lock, a spinlock “spins” in a loop, continuously checking if the lock 
-is available.
-This means the thread stays active and consumes CPU cycles while waiting. Spinlocks are generally used in low-level systems 
-programming or in situations where the lock is expected to be held for a very short time, because avoiding context switching 
-can make things faster.
-However, they can be inefficient on single-core systems or when the lock is held too long, as they waste CPU time by busy-waiting.
+4. ***Spinlocks:*** A spinlock is a type of lock used in multithreading to protect shared resources. Unlike regular locks where a thread might go to sleep if it can't acquire the lock, a spinlock “spins” in a loop, continuously checking if the lock is available.
+This means the thread stays active and consumes CPU cycles while waiting. Spinlocks are generally used in low-level systems programming or in situations where the lock is expected to be held for a very short time, because avoiding context switching can make things faster. However, they can be inefficient on single-core systems or when the lock is held too long, as they waste CPU time by busy-waiting.
 
+5. ***TryLock:*** A TryLock is a non-blocking version of a lock. When a thread attempts to acquire a lock using TryLock, it tries once and immediately returns with either success or failure, instead of waiting if the lock is already held by another thread. This is useful in situations where a thread should not be blocked and instead wants to perform other tasks or retry later if the resource is not immediately available.
+   
+6. ***Read-copy-update(RCU):*** Read-Copy-Update (RCU) is a high-performance synchronization mechanism used primarily in multithreaded environments like the Linux kernel. It’s designed to allow multiple readers to access shared data concurrently without blocking, while still enabling safe updates by writers
 
-5. TryLock: A TryLock is a non-blocking version of a lock. When a thread attempts to acquire a lock using TryLock, it tries once
-and immediately returns with either success or failure, instead of waiting if the lock is already held by another thread.
-This is useful in situations where a thread should not be blocked and instead wants to perform other tasks or retry later if the 
-resource is not immediately available.
-```
+7. ***Atomic operations:*** Atomic operations in threads are indivisible actions that ensure safe access to shared data without interference from other threads. They're a cornerstone of thread-safe programming, especially in concurrent environments like embedded systems or kernel-level code.

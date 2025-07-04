@@ -1,0 +1,27 @@
+# MY_Learning
+
+🧵 Thread Basics
+- What is a thread, and how is it different from a process?
+- What are the advantages of using threads in embedded systems?
+- How does context switching work between threads?
+- What is the difference between user-level and kernel-level threads?
+- How do threads share memory, and what are the risks?
+🔄 Thread Synchronization
+- What is a race condition? How can it be avoided?
+- Explain the use of mutexes and semaphores in thread synchronization.
+- What is a deadlock? How can you prevent or detect it?
+- What is priority inversion? How does it affect real-time systems?
+- How does a condition variable work in multithreading?
+🧠 Thread Management in C/Linux- How do you create and terminate a thread using pthread in C?
+- What does pthread_join() do, and why is it important?
+- What is the role of pthread_detach()?
+- How do you pass arguments to a thread function?
+- What happens if a thread accesses shared data without synchronization?
+⚙️ Advanced Concepts- What is thread affinity, and why would you use it?
+- How does thread scheduling work in Linux?
+- What are the differences between preemptive and cooperative multitasking?
+- How do you debug multithreaded applications? Any tools you prefer?
+- What are some common pitfalls in multithreaded programming?
+
+- [x] Write code
+- [ ] Test code
