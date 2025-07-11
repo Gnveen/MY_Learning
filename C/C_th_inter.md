@@ -55,7 +55,7 @@ syntax: data type *const ptr;	  syntax:int *const ptr;
   syntax:const int *const ptr;
 
 
-9)what are the operation we cannot perform on pointers?
+9)what are the operation we cannot perform on pointers?/
 A)1)addition,multiplication and division are not performed on two pointers.
   2)multiplication between pointer and any number.
   3)division of a pointer by any number.
