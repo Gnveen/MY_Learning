@@ -2,7 +2,7 @@
 
 ### What is an Instruction?
 
-An instruction is a single operation that a CPU (processor) can execute.
+An instruction is a single operation that a CPU (processor) can understand and execute.
 
 Examples:
 
