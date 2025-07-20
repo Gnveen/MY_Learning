@@ -1,12 +1,4 @@
-#Why isn't my code working?
 
-Ask:
-
-What is this variable doing right now?
-Is this loop running as many times as I expect?
-Am I updating the right index?
-What will this line do at runtime?
-       
  ..........pointers.........
 1)what is the difference betweeen c and emnbedded c?
 A)normal c is used in the application oriented programming where as embedded c is used in the microcontroller related boards then we use the embedded c.
