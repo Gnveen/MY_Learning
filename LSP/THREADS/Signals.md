@@ -1,4 +1,4 @@
-##1 Write a C program to catch and handle the SIGINT signal.
+###1 Write a C program to catch and handle the SIGINT signal.
 ```c
 #include<stdio.h>
 #include<signal.h>
