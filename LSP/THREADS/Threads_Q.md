@@ -390,7 +390,7 @@ int main()
     return 0;
 }
 ```
-15.program to create a thread performs addition of two numbers with mutex locks.
+15.program to display Increment and decrement using thread performs addition of two numbers with mutex locks.
 ```c
 #include<stdio.h>
 #include<pthread.h>
