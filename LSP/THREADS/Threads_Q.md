@@ -118,13 +118,11 @@ int main()
 ```c
 #include<stdio.h>
 #include<pthread.h>
-//int num1=2,num2=5;
-//int result;
 void *sum(void *args)
 {
     int *num=(int *)args;
     int result=num[0]+num[1];
-   // printf("Result:%d",result);
+   printf("Result:%d",result);
     return NULL;
 }
 int main()
@@ -134,7 +132,6 @@ int main()
     pthread_create(&id1,NULL,sum,(void *)numbers);
   //  pthread_create(&thread2,NULL,sum,NULL);
     pthread_join(id1,NULL);
-    printf("Result:%d",result);
     return 0;
 }
 ```
